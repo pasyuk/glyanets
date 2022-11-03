@@ -1,0 +1,134 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+:root {
+  --main-bg: #fff;
+  --main-color: #1E2E36;
+  --accent-color: #44C697;
+  --main-font-family: 'Proxima Nova Rg', Arial, sans-serif;
+  --main-font-size: 1.125rem;
+  --main-line-height: 1.5;
+  --main-width: 1920px;
+  --main-padding-inline: 51px;
+}
+
+@media screen and (max-width: 980px){
+  :root {
+    --main-padding-inline: 25px;
+  }
+}
+
+@media screen and (max-width: 1600px){
+  :root {
+    --main-font-size: 1rem;
+  }
+}
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  background-color: var(--main-bg, #fff);
+  color: var(--main-color, #1E2E36);
+  font-family: var(--main-font-family, sans-serif);
+  scroll-behavior: smooth;
+
+  &:focus-within {
+    scroll-behavior: smooth;
+
+    /* Remove smooth scroll for people that prefer not to see animation */
+    @media (prefers-reduced-motion: reduce) {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  min-width: 700px;
+  text-rendering: optimizeSpeed;
+  font-size: var(--main-font-size, 1rem);
+  line-height: var(--main-line-height, 1.5);
+}
+
+a {
+  color: var(--accent-color, #44C697);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  display: block;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+p {
+  margin-block: 0 1rem;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "codekit-project",
+  "version": "1.0.0",
+  "description": "CodeKit created this starter package.json file. You should customize it appropriately. (If you intend to publish this project on npm, add an entry in the 'repository' field and remove the 'private' attribute, below.)",
+  "scripts": {},
+  "author": "",
+  "license": "UNLICENSED",
+  "repository": {},
+  "private": true,
+  "devDependencies": {
+    "postcss": "^8.4.18",
+    "postcss-custom-media": "^8.0.2",
+    "postcss-nesting": "^10.2.0",
+    "sanitize.css": "^13.0.0",
+    "swiper": "^8.4.4"
+  }
+}
